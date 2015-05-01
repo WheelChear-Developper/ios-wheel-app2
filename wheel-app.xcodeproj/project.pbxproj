@@ -14,6 +14,10 @@
 		1B1535501AEC9E0B0026705B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B15354F1AEC9E0B0026705B /* Images.xcassets */; };
 		1B1535531AEC9E0B0026705B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1535511AEC9E0B0026705B /* LaunchScreen.xib */; };
 		1B15355F1AEC9E0B0026705B /* wheel_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15355E1AEC9E0B0026705B /* wheel_appTests.swift */; };
+		1B18C34E1AEF41DD00FD1A00 /* NaviMap_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */; };
+		1B5C78A11AF1CFD0000F1F79 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */; };
+		1B7E7A431AEE711D005F48E0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E7A421AEE711D005F48E0 /* MapKit.framework */; };
+		1BD85B851AF0DCD1005FC476 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		1B1535581AEC9E0B0026705B /* wheel-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wheel-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B15355D1AEC9E0B0026705B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B15355E1AEC9E0B0026705B /* wheel_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wheel_appTests.swift; sourceTree = "<group>"; };
+		1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviMap_View.swift; sourceTree = "<group>"; };
+		1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		1B7E7A421AEE711D005F48E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD85B851AF0DCD1005FC476 /* CoreLocation.framework in Frameworks */,
+				1B7E7A431AEE711D005F48E0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +71,8 @@
 		1B1535371AEC9E0B0026705B = {
 			isa = PBXGroup;
 			children = (
+				1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */,
+				1B7E7A421AEE711D005F48E0 /* MapKit.framework */,
 				1B1535421AEC9E0B0026705B /* wheel-app */,
 				1B15355B1AEC9E0B0026705B /* wheel-appTests */,
 				1B1535411AEC9E0B0026705B /* Products */,
@@ -79,11 +91,13 @@
 		1B1535421AEC9E0B0026705B /* wheel-app */ = {
 			isa = PBXGroup;
 			children = (
-				1B1535451AEC9E0B0026705B /* AppDelegate.swift */,
-				1B15354A1AEC9E0B0026705B /* ViewController.swift */,
-				1B15354C1AEC9E0B0026705B /* Main.storyboard */,
-				1B15354F1AEC9E0B0026705B /* Images.xcassets */,
 				1B1535511AEC9E0B0026705B /* LaunchScreen.xib */,
+				1B15354C1AEC9E0B0026705B /* Main.storyboard */,
+				1B1535451AEC9E0B0026705B /* AppDelegate.swift */,
+				1B15354F1AEC9E0B0026705B /* Images.xcassets */,
+				1B15354A1AEC9E0B0026705B /* ViewController.swift */,
+				1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */,
+				1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */,
 				1B1535471AEC9E0B0026705B /* wheel_app.xcdatamodeld */,
 				1B1535431AEC9E0B0026705B /* Supporting Files */,
 			);
@@ -164,6 +178,7 @@
 				TargetAttributes = {
 					1B15353F1AEC9E0B0026705B = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = N5PT49EP9P;
 					};
 					1B1535571AEC9E0B0026705B = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -216,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B15354B1AEC9E0B0026705B /* ViewController.swift in Sources */,
+				1B5C78A11AF1CFD0000F1F79 /* Configuration.swift in Sources */,
 				1B1535461AEC9E0B0026705B /* AppDelegate.swift in Sources */,
 				1B1535491AEC9E0B0026705B /* wheel_app.xcdatamodeld in Sources */,
+				1B18C34E1AEF41DD00FD1A00 /* NaviMap_View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,9 +363,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "wheel-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,9 +377,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "wheel-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -415,6 +440,7 @@
 				1B1535641AEC9E0B0026705B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B1535651AEC9E0B0026705B /* Build configuration list for PBXNativeTarget "wheel-appTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +449,7 @@
 				1B1535671AEC9E0B0026705B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
