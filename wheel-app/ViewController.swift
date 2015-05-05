@@ -17,6 +17,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     //地図ビュー
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var InfoLabel: UILabel!
+    @IBOutlet weak var InfoLabel2: UILabel!
+    
     //ロケーションマネージャー
     var myLocationManager: CLLocationManager!
     //取得した緯度を保持するインスタンス
@@ -36,28 +38,48 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     //地図のトラッキングモード設定
-    @IBAction func pushButton_Direction(sender: AnyObject) {
+    @IBAction func pushButton_Direction_PositionOnly(sender: AnyObject) {
         
         // 位置情報の更新を停止
         myLocationManager.stopUpdatingLocation()
         
         //Config用のクラス設定
         var config:Configuration = (config_cls() as! Configuration)
+        config.setMapDirection(0)
         
-        switch config.getMapDirection() {
-        case 0://未設定の為、マーキング設定へ変更
-            config.setMapDirection(1)
-            
-        case 1://マーキング設定されている為、向き設定へ変更
-            config.setMapDirection(2)
-            
-        case 2://向き設定されている為、未設定へ戻す
-            config.setMapDirection(0)
-            
-        default:
-            config.setMapDirection(0)
-            break
-        }
+        //初期フラグ設定解除
+        self.map_FirstPointSet = false
+        
+        // 位置情報の更新を開始.
+        myLocationManager.startUpdatingLocation()
+    }
+    
+    //地図のトラッキングモード設定
+    @IBAction func pushButton_Direction_CenterPosition(sender: AnyObject) {
+        
+        // 位置情報の更新を停止
+        myLocationManager.stopUpdatingLocation()
+        
+        //Config用のクラス設定
+        var config:Configuration = (config_cls() as! Configuration)
+        config.setMapDirection(1)
+        
+        //初期フラグ設定解除
+        self.map_FirstPointSet = false
+        
+        // 位置情報の更新を開始.
+        myLocationManager.startUpdatingLocation()
+    }
+    
+    //地図のトラッキングモード設定
+    @IBAction func pushButton_Direction_NabiPosition(sender: AnyObject) {
+        
+        // 位置情報の更新を停止
+        myLocationManager.stopUpdatingLocation()
+        
+        //Config用のクラス設定
+        var config:Configuration = (config_cls() as! Configuration)
+        config.setMapDirection(2)
         
         //初期フラグ設定解除
         self.map_FirstPointSet = false
@@ -86,7 +108,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // 位置情報の精度を指定
         myLocationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         // 位置情報取得間隔を指定．指定した値（メートル）移動したら位置情報を更新する
-        myLocationManager.distanceFilter = 10.0
+        myLocationManager.distanceFilter = 0.1//10.0
         
     
         
@@ -102,6 +124,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         self.MapView.showsUserLocation = false
         self.MapView.setUserTrackingMode(MKUserTrackingMode.None, animated: false)
+        
+        var theRegion: MKCoordinateRegion = self.MapView.region
+        theRegion.span.longitudeDelta = 0.005
+        theRegion.span.latitudeDelta = 0.005
+        self.MapView.setRegion(theRegion, animated:true)
+        self.MapView.showsUserLocation = true
         
         // 位置情報の更新を開始.
         myLocationManager.startUpdatingLocation()
@@ -128,76 +156,75 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //緯度経度表示
         InfoLabel.text = "latiitude: \(self.map_latitude) , longitude: \(self.map_longitude)"
-
-        
-        
-        // セット済みのピンを削除
-        self.MapView.removeAnnotations(self.MapView.annotations)
         
         switch config.getMapDirection() {
-        case 0://未設定の為、マーキング設定へ変更
-            self.MapView.showsUserLocation = false
-            self.MapView.setUserTrackingMode(MKUserTrackingMode.None, animated: true)
+        case 0://現在ポイントのみ
+            InfoLabel2.text = "現在ポイントのみ"
             
-            //初回のみ地図位置をセット
             if (self.map_FirstPointSet == false) {
-                //初期位置を設定
-                var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(self.map_latitude,self.map_longitude)
-                let span = MKCoordinateSpanMake(0.01, 0.01) //小さい値であるほど近づく
-                //任意の場所を表示する場合、MKCoordinateRegionを使って表示する -> (中心位置、表示領域)
-                var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
-                self.MapView.setRegion(centerPosition,animated:true)
+                self.MapView.showsUserLocation = true
+                self.MapView.setUserTrackingMode(MKUserTrackingMode.None, animated: false)
+                self.MapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
+                
+                //初期フラグ設定解除
+                self.map_FirstPointSet = true
+                
+                // 位置情報の更新を停止
+                myLocationManager.stopUpdatingLocation()
+            }
+            
+            //初期位置を設定
+            var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(self.map_latitude,self.map_longitude)
+            self.MapView.centerCoordinate = centerCoordinate
+            
+        case 1://ポイント無し
+            InfoLabel2.text = "ポイント無し"
+            
+            if (self.map_FirstPointSet == false) {
+                self.MapView.showsUserLocation = false
+                self.MapView.setUserTrackingMode(MKUserTrackingMode.None, animated: true)
+                
                 //初期フラグ設定解除
                 self.map_FirstPointSet = true
             }
+            
+        case 2://ナビゲーション表示
+            InfoLabel2.text = "ナビゲーション表示"
+            
+            if (self.map_FirstPointSet == false) {
 
-            
-        case 1://マーキング設定されている為、向き設定へ変更
-            self.MapView.showsUserLocation = true
-            self.MapView.setUserTrackingMode(MKUserTrackingMode.None, animated: true)
-            
-            //初回のみ地図位置をセット
-            if (self.map_FirstPointSet == false) {
-                //初期位置を設定
-                var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(self.map_latitude,self.map_longitude)
-                let span = MKCoordinateSpanMake(0.001, 0.001) //小さい値であるほど近づく
-                //任意の場所を表示する場合、MKCoordinateRegionを使って表示する -> (中心位置、表示領域)
-                var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
-                self.MapView.setRegion(centerPosition,animated:true)
+                
+
+                
+                //ズーム
+                var theRegion: MKCoordinateRegion = self.MapView.region
+                theRegion.span.longitudeDelta = 0.01
+                theRegion.span.latitudeDelta = 0.01
+                self.MapView.setRegion(theRegion, animated:true)
+                self.MapView.showsUserLocation = true
+
                 //初期フラグ設定解除
                 self.map_FirstPointSet = true
             }
             
-        case 2://向き設定されている為、未設定へ戻す
             self.MapView.showsUserLocation = true
+            self.MapView.setUserTrackingMode(MKUserTrackingMode.None, animated: false)
             self.MapView.setUserTrackingMode(MKUserTrackingMode.FollowWithHeading, animated: true)
             
-            //初回のみ地図位置をセット
-            if (self.map_FirstPointSet == false) {
-                //初期位置を設定
-                var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(self.map_latitude,self.map_longitude)
-//                let span = MKCoordinateSpanMake(0.00001, 0.00001) //小さい値であるほど近づく
-                //任意の場所を表示する場合、MKCoordinateRegionを使って表示する -> (中心位置、表示領域)
-//                var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
-//                self.MapView.setRegion(centerPosition,animated:true)
-                
-                
-                var theRegion: MKCoordinateRegion = self.MapView.region
-                theRegion.span.longitudeDelta /= 500
-                theRegion.span.latitudeDelta /= 500
-                println("\(theRegion.span.longitudeDelta) - \(theRegion.span.latitudeDelta)")
-                
-                self.MapView.setRegion(theRegion, animated:true)
-                //初期フラグ設定解除
-                self.map_FirstPointSet = true
-            }
-                
+            //初期位置を設定
+            var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(self.map_latitude,self.map_longitude)
+            self.MapView.centerCoordinate = centerCoordinate
+            
         default:
             break
         }
         
         
         /*
+        
+        // セット済みのピンを削除
+        self.MapView.removeAnnotations(self.MapView.annotations)
+        
         // ピンを生成.
         var myPin: MKPointAnnotation = MKPointAnnotation()
         
