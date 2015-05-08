@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import 
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -218,6 +219,49 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         default:
             break
         }
+        
+        
+        
+        
+        var apiString:String = "[out:json];"
+        apiString = apiString + "("
+        apiString = apiString + "node['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        
+        apiString = apiString + "node['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        
+        apiString = apiString + "node['highway'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['highway'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['highway'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        
+        apiString = apiString + "node['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        
+        apiString = apiString + ");"
+        // print resultsc
+        apiString = apiString + "out body;"
+        apiString = apiString + ">;"
+        apiString = apiString + "out skel qt;"
+        
+        var para:NSDictionary = ["data": apiString];
+        
+        
+        //リクエスト
+        let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
+        let serializer:AFJSONRequestSerializer = AFJSONRequestSerializer()
+        manager.requestSerializer = serializer
+        manager.GET("http://overpass-api.de/api/interpreter", parameters: para,
+            success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
+                println("Success!!")
+                println(responsobject)
+                
+                var price:String
+                
+                for( var l=0;l<responsobject.count;l++){
+                    price = responsobject["id"][l] as! String
+                }
+                
+            },
+            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error!!")
+            }
+        )
         
         
         /*

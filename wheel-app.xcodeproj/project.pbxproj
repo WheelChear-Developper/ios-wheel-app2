@@ -18,6 +18,7 @@
 		1B5C78A11AF1CFD0000F1F79 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */; };
 		1B7E7A431AEE711D005F48E0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E7A421AEE711D005F48E0 /* MapKit.framework */; };
 		1BD85B851AF0DCD1005FC476 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */; };
+		BCFDCD3BC6E04F81C9F6D556 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB2411295C26B10F0CA93D5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +44,13 @@
 		1B15355D1AEC9E0B0026705B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B15355E1AEC9E0B0026705B /* wheel_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wheel_appTests.swift; sourceTree = "<group>"; };
 		1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviMap_View.swift; sourceTree = "<group>"; };
+		1B3134851AFB083E00223597 /* wheel-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wheel-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		1B7E7A421AEE711D005F48E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4EB2411295C26B10F0CA93D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFEDE6BE9B9CCB0E688F935 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 			files = (
 				1BD85B851AF0DCD1005FC476 /* CoreLocation.framework in Frameworks */,
 				1B7E7A431AEE711D005F48E0 /* MapKit.framework in Frameworks */,
+				BCFDCD3BC6E04F81C9F6D556 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +82,8 @@
 				1B1535421AEC9E0B0026705B /* wheel-app */,
 				1B15355B1AEC9E0B0026705B /* wheel-appTests */,
 				1B1535411AEC9E0B0026705B /* Products */,
+				B4F0EBE22908DFC4E3E76B9D /* Pods */,
+				E0A9F9FACE2C4881818498C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +108,7 @@
 				1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */,
 				1B1535471AEC9E0B0026705B /* wheel_app.xcdatamodeld */,
 				1B1535431AEC9E0B0026705B /* Supporting Files */,
+				1B3134851AFB083E00223597 /* wheel-app-Bridging-Header.h */,
 			);
 			path = "wheel-app";
 			sourceTree = "<group>";
@@ -129,6 +138,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B4F0EBE22908DFC4E3E76B9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */,
+				EEFEDE6BE9B9CCB0E688F935 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0A9F9FACE2C4881818498C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2411295C26B10F0CA93D5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B1535621AEC9E0B0026705B /* Build configuration list for PBXNativeTarget "wheel-app" */;
 			buildPhases = (
+				363349E8A05897C6FFC0BFA8 /* Check Pods Manifest.lock */,
 				1B15353C1AEC9E0B0026705B /* Sources */,
 				1B15353D1AEC9E0B0026705B /* Frameworks */,
 				1B15353E1AEC9E0B0026705B /* Resources */,
+				3986BD0F9B27B7EF7AE6BFD9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,6 +252,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		363349E8A05897C6FFC0BFA8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3986BD0F9B27B7EF7AE6BFD9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B15353C1AEC9E0B0026705B /* Sources */ = {
@@ -361,28 +422,35 @@
 		};
 		1B1535631AEC9E0B0026705B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "wheel-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		1B1535641AEC9E0B0026705B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEFEDE6BE9B9CCB0E688F935 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "wheel-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
