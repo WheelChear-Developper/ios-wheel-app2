@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import 
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -251,11 +250,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 println("Success!!")
                 println(responsobject)
                 
-                var price:String
-                
-                for( var l=0;l<responsobject.count;l++){
-                    price = responsobject["id"][l] as! String
-                }
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
