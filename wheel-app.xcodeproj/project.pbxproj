@@ -15,9 +15,10 @@
 		1B1535531AEC9E0B0026705B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1535511AEC9E0B0026705B /* LaunchScreen.xib */; };
 		1B15355F1AEC9E0B0026705B /* wheel_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15355E1AEC9E0B0026705B /* wheel_appTests.swift */; };
 		1B18C34E1AEF41DD00FD1A00 /* NaviMap_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */; };
-		1B3421E31B00E527007265EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3421E11B00E527007265EC /* InfoPlist.strings */; };
 		1B3421EC1B00E8E4007265EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3421EA1B00E8E4007265EC /* Localizable.strings */; };
 		1B3421EE1B00E922007265EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3421E81B00E8E4007265EC /* Localizable.strings */; };
+		1B3422E81B01FF33007265EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3422EA1B01FF33007265EC /* InfoPlist.strings */; };
+		1B3422ED1B01FF47007265EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3422EF1B01FF47007265EC /* InfoPlist.strings */; };
 		1B5C78A11AF1CFD0000F1F79 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */; };
 		1B6FE7981B0087D0008B6DAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15354A1AEC9E0B0026705B /* ViewController.swift */; };
 		1B6FE7991B0087D0008B6DAF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */; };
@@ -59,11 +60,16 @@
 		1B15355E1AEC9E0B0026705B /* wheel_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wheel_appTests.swift; sourceTree = "<group>"; };
 		1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviMap_View.swift; sourceTree = "<group>"; };
 		1B3134851AFB083E00223597 /* wheel-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wheel-app-Bridging-Header.h"; sourceTree = "<group>"; };
-		1B3421E21B00E527007265EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B3421E41B00E53B007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B3421E51B00E544007265EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B3421E81B00E8E4007265EC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1B3421EA1B00E8E4007265EC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1B3422E91B01FF33007265EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B3422EB1B01FF36007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B3422EC1B01FF37007265EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B3422EE1B01FF47007265EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B3422F01B01FF49007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B3422F11B01FF4A007265EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B3422F31B020633007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1B3422F51B020638007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		1B6FE7AA1B0087D1008B6DAF /* wheel-app(ADHOC).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wheel-app(ADHOC).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6FE7AB1B0087D1008B6DAF /* wheel-app(ADHOC)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "wheel-app(ADHOC)-Info.plist"; path = "/Volumes/Work_Drive/端末別フォルダ/MacServer/Git/自社開発分/Xcode/wheel-app-ios/wheel-app(ADHOC)-Info.plist"; sourceTree = "<absolute>"; };
@@ -117,7 +123,6 @@
 				1B1535411AEC9E0B0026705B /* Products */,
 				B4F0EBE22908DFC4E3E76B9D /* Pods */,
 				E0A9F9FACE2C4881818498C9 /* Frameworks */,
-				1B6FE7AB1B0087D1008B6DAF /* wheel-app(ADHOC)-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				1B3421E61B00E8E4007265EC /* Res */,
-				1B3421E11B00E527007265EC /* InfoPlist.strings */,
 				1B1535441AEC9E0B0026705B /* Info.plist */,
+				1B6FE7AB1B0087D1008B6DAF /* wheel-app(ADHOC)-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 		1B3421E71B00E8E4007265EC /* ADHOC */ = {
 			isa = PBXGroup;
 			children = (
+				1B3422EA1B01FF33007265EC /* InfoPlist.strings */,
 				1B3421E81B00E8E4007265EC /* Localizable.strings */,
 			);
 			path = ADHOC;
@@ -195,6 +201,7 @@
 		1B3421E91B00E8E4007265EC /* Original */ = {
 			isa = PBXGroup;
 			children = (
+				1B3422EF1B01FF47007265EC /* InfoPlist.strings */,
 				1B3421EA1B00E8E4007265EC /* Localizable.strings */,
 			);
 			path = Original;
@@ -322,8 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3421EC1B00E8E4007265EC /* Localizable.strings in Resources */,
+				1B3422ED1B01FF47007265EC /* InfoPlist.strings in Resources */,
 				1B15354E1AEC9E0B0026705B /* Main.storyboard in Resources */,
-				1B3421E31B00E527007265EC /* InfoPlist.strings in Resources */,
 				1B1535531AEC9E0B0026705B /* LaunchScreen.xib in Resources */,
 				1B1535501AEC9E0B0026705B /* Images.xcassets in Resources */,
 			);
@@ -344,6 +351,7 @@
 				1B3421EE1B00E922007265EC /* Localizable.strings in Resources */,
 				1B6FE7A31B0087D0008B6DAF /* LaunchScreen.xib in Resources */,
 				1B6FE7A41B0087D0008B6DAF /* Images.xcassets in Resources */,
+				1B3422E81B01FF33007265EC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +469,7 @@
 			children = (
 				1B15354D1AEC9E0B0026705B /* Base */,
 				1B6FE7CF1B00A8F4008B6DAF /* ja */,
+				1B3422F31B020633007265EC /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -470,16 +479,27 @@
 			children = (
 				1B1535521AEC9E0B0026705B /* Base */,
 				1B6FE7CE1B00A8F4008B6DAF /* ja */,
+				1B3422F51B020638007265EC /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		1B3421E11B00E527007265EC /* InfoPlist.strings */ = {
+		1B3422EA1B01FF33007265EC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B3421E21B00E527007265EC /* Base */,
-				1B3421E41B00E53B007265EC /* en */,
-				1B3421E51B00E544007265EC /* ja */,
+				1B3422E91B01FF33007265EC /* Base */,
+				1B3422EB1B01FF36007265EC /* en */,
+				1B3422EC1B01FF37007265EC /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1B3422EF1B01FF47007265EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B3422EE1B01FF47007265EC /* Base */,
+				1B3422F01B01FF49007265EC /* en */,
+				1B3422F11B01FF4A007265EC /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

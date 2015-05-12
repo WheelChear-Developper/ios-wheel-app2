@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "ポイント無し"; ObjectID = "8pd-gQ-CjX"; */
+"8pd-gQ-CjX.normalTitle" = "ポイント無し";
+
+/* Class = "UISearchBar"; 9Ww-10-M5o.scopeButtonTitles[0] = "Title"; ObjectID = "9Ww-10-M5o"; */
+"9Ww-10-M5o.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; 9Ww-10-M5o.scopeButtonTitles[1] = "Title"; ObjectID = "9Ww-10-M5o"; */
+"9Ww-10-M5o.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UIButton"; normalTitle = "現在ポイントのみ"; ObjectID = "OW6-IF-Mgl"; */
+"OW6-IF-Mgl.normalTitle" = "現在ポイントのみ";
+
+/* Class = "UIButton"; normalTitle = "ナビゲーション表示"; ObjectID = "f51-F8-T4b"; */
+"f51-F8-T4b.normalTitle" = "ナビゲーション表示";
