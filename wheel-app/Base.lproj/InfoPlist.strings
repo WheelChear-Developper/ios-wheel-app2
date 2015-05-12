@@ -1,4 +1,4 @@
 /* Localized versions of Info.plist keys */
 
-CFBundleName = "WheelApp(ADHOC)";
-CFBundleDisplayName = "Wheel(ADHOC)";
+CFBundleName = "WheelApp";
+CFBundleDisplayName = "WheelApp";

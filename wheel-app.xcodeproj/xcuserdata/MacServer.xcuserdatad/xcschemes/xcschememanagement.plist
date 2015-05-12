@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>wheel-app(ADHOC).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>wheel-app(LOCAL).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>wheel-app.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>1B1535571AEC9E0B0026705B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1B6FE7951B0087D0008B6DAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
