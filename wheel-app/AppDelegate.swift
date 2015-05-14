@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         //ロギング開始
-        AFNetworkActivityLogger.sharedLogger().level = .AFLoggerLevelDebug
-        AFNetworkActivityLogger.sharedLogger().startLogging()
+//        AFNetworkActivityLogger.sharedLogger().level = .AFLoggerLevelDebug
+//        AFNetworkActivityLogger.sharedLogger().startLogging()
         
         return true
     }

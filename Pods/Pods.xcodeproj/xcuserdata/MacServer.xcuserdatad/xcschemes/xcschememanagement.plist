@@ -4,19 +4,61 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworkActivityLogger.xcscheme</key>
+		<key>Pods-Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Pods-AFNetworking.xcscheme</key>
+		<key>Pods-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>Pods-wheel-app-Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-wheel-app-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-wheel-app.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-wheel-appTests-Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Pods-wheel-appTests-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Pods-wheel-appTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
@@ -28,17 +70,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D544BF718362221AEE62427</key>
+		<key>0BC84DC9DAB33E0E2627EBA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>327160674B052940775CBE05</key>
+		<key>139DA460CDDC0B633387BE80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BF104634133374F796B4511</key>
+		<key>1E2CA4B84AA996BA7A5056DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F30D906B936F4FF09EA0A2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>795097E05690D278D843F419</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B5E2C64782BA6E31E6454C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7777CB888CB74D57CA9D34D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB56D213571F7D7C8A123808</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BBFF2E97D81B378B3850A34E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

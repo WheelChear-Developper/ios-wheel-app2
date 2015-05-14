@@ -16,24 +16,21 @@
 		1B15355F1AEC9E0B0026705B /* wheel_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15355E1AEC9E0B0026705B /* wheel_appTests.swift */; };
 		1B18C34E1AEF41DD00FD1A00 /* NaviMap_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */; };
 		1B3421EC1B00E8E4007265EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3421EA1B00E8E4007265EC /* Localizable.strings */; };
-		1B3421EE1B00E922007265EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3421E81B00E8E4007265EC /* Localizable.strings */; };
-		1B3422E81B01FF33007265EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3422EA1B01FF33007265EC /* InfoPlist.strings */; };
 		1B3422ED1B01FF47007265EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3422EF1B01FF47007265EC /* InfoPlist.strings */; };
 		1B5C78A11AF1CFD0000F1F79 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */; };
-		1B6FE7981B0087D0008B6DAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15354A1AEC9E0B0026705B /* ViewController.swift */; };
-		1B6FE7991B0087D0008B6DAF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */; };
-		1B6FE79A1B0087D0008B6DAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1535451AEC9E0B0026705B /* AppDelegate.swift */; };
-		1B6FE79B1B0087D0008B6DAF /* wheel_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B1535471AEC9E0B0026705B /* wheel_app.xcdatamodeld */; };
-		1B6FE79C1B0087D0008B6DAF /* NaviMap_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */; };
-		1B6FE79E1B0087D0008B6DAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */; };
-		1B6FE79F1B0087D0008B6DAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E7A421AEE711D005F48E0 /* MapKit.framework */; };
-		1B6FE7A01B0087D0008B6DAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB2411295C26B10F0CA93D5 /* libPods.a */; };
-		1B6FE7A21B0087D0008B6DAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B15354C1AEC9E0B0026705B /* Main.storyboard */; };
-		1B6FE7A31B0087D0008B6DAF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1535511AEC9E0B0026705B /* LaunchScreen.xib */; };
-		1B6FE7A41B0087D0008B6DAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B15354F1AEC9E0B0026705B /* Images.xcassets */; };
 		1B7E7A431AEE711D005F48E0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E7A421AEE711D005F48E0 /* MapKit.framework */; };
+		1BA37DC41B04830700C4F884 /* pin_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DBB1B04830700C4F884 /* pin_blue.png */; };
+		1BA37DC51B04830700C4F884 /* pin_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DBC1B04830700C4F884 /* pin_gray.png */; };
+		1BA37DC61B04830700C4F884 /* pin_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DBD1B04830700C4F884 /* pin_green.png */; };
+		1BA37DC71B04830700C4F884 /* pin_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DBE1B04830700C4F884 /* pin_orange.png */; };
+		1BA37DC81B04830700C4F884 /* pin_purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DBF1B04830700C4F884 /* pin_purple.png */; };
+		1BA37DC91B04830700C4F884 /* pin_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DC01B04830700C4F884 /* pin_red.png */; };
+		1BA37DCA1B04830700C4F884 /* pin_wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DC11B04830700C4F884 /* pin_wheel.png */; };
+		1BA37DCB1B04830700C4F884 /* pin_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DC21B04830700C4F884 /* pin_white.png */; };
+		1BA37DCC1B04830700C4F884 /* pin_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA37DC31B04830700C4F884 /* pin_yellow.png */; };
+		1BA37DCF1B04831500C4F884 /* GpsPin_DataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA37DCE1B04831500C4F884 /* GpsPin_DataModal.swift */; };
 		1BD85B851AF0DCD1005FC476 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */; };
-		BCFDCD3BC6E04F81C9F6D556 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB2411295C26B10F0CA93D5 /* libPods.a */; };
+		E084FC0080BDD13788F59256 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D66878C5ACCD6F8F3303A3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,14 +68,23 @@
 		1B3422F31B020633007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1B3422F51B020638007265EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		1B6FE7AA1B0087D1008B6DAF /* wheel-app(ADHOC).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wheel-app(ADHOC).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B6FE7AB1B0087D1008B6DAF /* wheel-app(ADHOC)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "wheel-app(ADHOC)-Info.plist"; path = "/Volumes/Work_Drive/端末別フォルダ/MacServer/Git/自社開発分/Xcode/wheel-app-ios/wheel-app(ADHOC)-Info.plist"; sourceTree = "<absolute>"; };
 		1B6FE7CE1B00A8F4008B6DAF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B6FE7CF1B00A8F4008B6DAF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		1B7E7A421AEE711D005F48E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1BA37DBB1B04830700C4F884 /* pin_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_blue.png; sourceTree = "<group>"; };
+		1BA37DBC1B04830700C4F884 /* pin_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_gray.png; sourceTree = "<group>"; };
+		1BA37DBD1B04830700C4F884 /* pin_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_green.png; sourceTree = "<group>"; };
+		1BA37DBE1B04830700C4F884 /* pin_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_orange.png; sourceTree = "<group>"; };
+		1BA37DBF1B04830700C4F884 /* pin_purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_purple.png; sourceTree = "<group>"; };
+		1BA37DC01B04830700C4F884 /* pin_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_red.png; sourceTree = "<group>"; };
+		1BA37DC11B04830700C4F884 /* pin_wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_wheel.png; sourceTree = "<group>"; };
+		1BA37DC21B04830700C4F884 /* pin_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_white.png; sourceTree = "<group>"; };
+		1BA37DC31B04830700C4F884 /* pin_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_yellow.png; sourceTree = "<group>"; };
+		1BA37DCE1B04831500C4F884 /* GpsPin_DataModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsPin_DataModal.swift; sourceTree = "<group>"; };
+		1BD5750B1B047BBD00DB5432 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		1BD85B841AF0DCD1005FC476 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		4EB2411295C26B10F0CA93D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D66878C5ACCD6F8F3303A3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFEDE6BE9B9CCB0E688F935 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +95,7 @@
 			files = (
 				1BD85B851AF0DCD1005FC476 /* CoreLocation.framework in Frameworks */,
 				1B7E7A431AEE711D005F48E0 /* MapKit.framework in Frameworks */,
-				BCFDCD3BC6E04F81C9F6D556 /* libPods.a in Frameworks */,
+				E084FC0080BDD13788F59256 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,16 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B6FE79D1B0087D0008B6DAF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B6FE79E1B0087D0008B6DAF /* CoreLocation.framework in Frameworks */,
-				1B6FE79F1B0087D0008B6DAF /* MapKit.framework in Frameworks */,
-				1B6FE7A01B0087D0008B6DAF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +127,6 @@
 			children = (
 				1B1535401AEC9E0B0026705B /* wheel-app.app */,
 				1B1535581AEC9E0B0026705B /* wheel-appTests.xctest */,
-				1B6FE7AA1B0087D1008B6DAF /* wheel-app(ADHOC).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +142,7 @@
 				1B18C34D1AEF41DD00FD1A00 /* NaviMap_View.swift */,
 				1B5C78A01AF1CFD0000F1F79 /* Configuration.swift */,
 				1B1535471AEC9E0B0026705B /* wheel_app.xcdatamodeld */,
+				1BA37DCD1B04831500C4F884 /* Modal */,
 				1B1535431AEC9E0B0026705B /* Supporting Files */,
 				1B3134851AFB083E00223597 /* wheel-app-Bridging-Header.h */,
 			);
@@ -158,7 +154,6 @@
 			children = (
 				1B3421E61B00E8E4007265EC /* Res */,
 				1B1535441AEC9E0B0026705B /* Info.plist */,
-				1B6FE7AB1B0087D1008B6DAF /* wheel-app(ADHOC)-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,6 +178,7 @@
 		1B3421E61B00E8E4007265EC /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				1BA37DBA1B04830700C4F884 /* image */,
 				1B3421E71B00E8E4007265EC /* ADHOC */,
 				1B3421E91B00E8E4007265EC /* Original */,
 			);
@@ -207,6 +203,30 @@
 			path = Original;
 			sourceTree = "<group>";
 		};
+		1BA37DBA1B04830700C4F884 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				1BA37DBB1B04830700C4F884 /* pin_blue.png */,
+				1BA37DBC1B04830700C4F884 /* pin_gray.png */,
+				1BA37DBD1B04830700C4F884 /* pin_green.png */,
+				1BA37DBE1B04830700C4F884 /* pin_orange.png */,
+				1BA37DBF1B04830700C4F884 /* pin_purple.png */,
+				1BA37DC01B04830700C4F884 /* pin_red.png */,
+				1BA37DC11B04830700C4F884 /* pin_wheel.png */,
+				1BA37DC21B04830700C4F884 /* pin_white.png */,
+				1BA37DC31B04830700C4F884 /* pin_yellow.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		1BA37DCD1B04831500C4F884 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				1BA37DCE1B04831500C4F884 /* GpsPin_DataModal.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		B4F0EBE22908DFC4E3E76B9D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,7 +239,8 @@
 		E0A9F9FACE2C4881818498C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EB2411295C26B10F0CA93D5 /* libPods.a */,
+				1BD5750B1B047BBD00DB5432 /* Pods.framework */,
+				A4D66878C5ACCD6F8F3303A3 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,6 +257,7 @@
 				1B15353D1AEC9E0B0026705B /* Frameworks */,
 				1B15353E1AEC9E0B0026705B /* Resources */,
 				3986BD0F9B27B7EF7AE6BFD9 /* Copy Pods Resources */,
+				302D90E36D395A99B0D50923 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,25 +285,6 @@
 			productName = "wheel-appTests";
 			productReference = 1B1535581AEC9E0B0026705B /* wheel-appTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1B6FE7951B0087D0008B6DAF /* wheel-app(ADHOC) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B6FE7A61B0087D0008B6DAF /* Build configuration list for PBXNativeTarget "wheel-app(ADHOC)" */;
-			buildPhases = (
-				1B6FE7961B0087D0008B6DAF /* Check Pods Manifest.lock */,
-				1B6FE7971B0087D0008B6DAF /* Sources */,
-				1B6FE79D1B0087D0008B6DAF /* Frameworks */,
-				1B6FE7A11B0087D0008B6DAF /* Resources */,
-				1B6FE7A51B0087D0008B6DAF /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "wheel-app(ADHOC)";
-			productName = "wheel-app";
-			productReference = 1B6FE7AA1B0087D1008B6DAF /* wheel-app(ADHOC).app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -317,7 +320,6 @@
 			projectRoot = "";
 			targets = (
 				1B15353F1AEC9E0B0026705B /* wheel-app */,
-				1B6FE7951B0087D0008B6DAF /* wheel-app(ADHOC) */,
 				1B1535571AEC9E0B0026705B /* wheel-appTests */,
 			);
 		};
@@ -329,10 +331,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3421EC1B00E8E4007265EC /* Localizable.strings in Resources */,
+				1BA37DC41B04830700C4F884 /* pin_blue.png in Resources */,
 				1B3422ED1B01FF47007265EC /* InfoPlist.strings in Resources */,
+				1BA37DCA1B04830700C4F884 /* pin_wheel.png in Resources */,
+				1BA37DC91B04830700C4F884 /* pin_red.png in Resources */,
+				1BA37DCC1B04830700C4F884 /* pin_yellow.png in Resources */,
 				1B15354E1AEC9E0B0026705B /* Main.storyboard in Resources */,
 				1B1535531AEC9E0B0026705B /* LaunchScreen.xib in Resources */,
 				1B1535501AEC9E0B0026705B /* Images.xcassets in Resources */,
+				1BA37DC51B04830700C4F884 /* pin_gray.png in Resources */,
+				1BA37DCB1B04830700C4F884 /* pin_white.png in Resources */,
+				1BA37DC81B04830700C4F884 /* pin_purple.png in Resources */,
+				1BA37DC71B04830700C4F884 /* pin_orange.png in Resources */,
+				1BA37DC61B04830700C4F884 /* pin_green.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,49 +354,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B6FE7A11B0087D0008B6DAF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B6FE7A21B0087D0008B6DAF /* Main.storyboard in Resources */,
-				1B3421EE1B00E922007265EC /* Localizable.strings in Resources */,
-				1B6FE7A31B0087D0008B6DAF /* LaunchScreen.xib in Resources */,
-				1B6FE7A41B0087D0008B6DAF /* Images.xcassets in Resources */,
-				1B3422E81B01FF33007265EC /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B6FE7961B0087D0008B6DAF /* Check Pods Manifest.lock */ = {
+		302D90E36D395A99B0D50923 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1B6FE7A51B0087D0008B6DAF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		363349E8A05897C6FFC0BFA8 /* Check Pods Manifest.lock */ = {
@@ -429,6 +413,7 @@
 				1B5C78A11AF1CFD0000F1F79 /* Configuration.swift in Sources */,
 				1B1535461AEC9E0B0026705B /* AppDelegate.swift in Sources */,
 				1B1535491AEC9E0B0026705B /* wheel_app.xcdatamodeld in Sources */,
+				1BA37DCF1B04831500C4F884 /* GpsPin_DataModal.swift in Sources */,
 				1B18C34E1AEF41DD00FD1A00 /* NaviMap_View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,18 +423,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B15355F1AEC9E0B0026705B /* wheel_appTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B6FE7971B0087D0008B6DAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B6FE7981B0087D0008B6DAF /* ViewController.swift in Sources */,
-				1B6FE7991B0087D0008B6DAF /* Configuration.swift in Sources */,
-				1B6FE79A1B0087D0008B6DAF /* AppDelegate.swift in Sources */,
-				1B6FE79B1B0087D0008B6DAF /* wheel_app.xcdatamodeld in Sources */,
-				1B6FE79C1B0087D0008B6DAF /* NaviMap_View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -582,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,7 +572,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "wheel-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
@@ -617,7 +590,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "wheel-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
@@ -627,6 +600,7 @@
 		};
 		1B1535661AEC9E0B0026705B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -646,152 +620,17 @@
 		};
 		1B1535671AEC9E0B0026705B /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "wheel-appTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wheel-app.app/wheel-app";
-			};
-			name = Release;
-		};
-		1B6FE74E1B0055BD008B6DAF /* Debug(LOCAL) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-					LOCAL,
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = "Debug(LOCAL)";
-		};
-		1B6FE74F1B0055BD008B6DAF /* Debug(LOCAL) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "wheel-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = "Debug(LOCAL)";
-		};
-		1B6FE7501B0055BD008B6DAF /* Debug(LOCAL) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "wheel-appTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wheel-app.app/wheel-app";
-			};
-			name = "Debug(LOCAL)";
-		};
-		1B6FE7A71B0087D0008B6DAF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "wheel-app(ADHOC)-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "wheel-app(ADHOC)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		1B6FE7A81B0087D0008B6DAF /* Debug(LOCAL) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEF809E73AF7CB83A19BCB6 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "wheel-app(ADHOC)-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "wheel-app(ADHOC)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = "Debug(LOCAL)";
-		};
-		1B6FE7A91B0087D0008B6DAF /* Release */ = {
-			isa = XCBuildConfiguration;
 			baseConfigurationReference = EEFEDE6BE9B9CCB0E688F935 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "wheel-app(ADHOC)-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "wheel-app(ADHOC)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wheel-app/wheel-app-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "wheel-appTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wheel-app.app/wheel-app";
 			};
 			name = Release;
 		};
@@ -802,7 +641,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B1535601AEC9E0B0026705B /* Debug */,
-				1B6FE74E1B0055BD008B6DAF /* Debug(LOCAL) */,
 				1B1535611AEC9E0B0026705B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -812,7 +650,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B1535631AEC9E0B0026705B /* Debug */,
-				1B6FE74F1B0055BD008B6DAF /* Debug(LOCAL) */,
 				1B1535641AEC9E0B0026705B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -822,18 +659,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B1535661AEC9E0B0026705B /* Debug */,
-				1B6FE7501B0055BD008B6DAF /* Debug(LOCAL) */,
 				1B1535671AEC9E0B0026705B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B6FE7A61B0087D0008B6DAF /* Build configuration list for PBXNativeTarget "wheel-app(ADHOC)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B6FE7A71B0087D0008B6DAF /* Debug */,
-				1B6FE7A81B0087D0008B6DAF /* Debug(LOCAL) */,
-				1B6FE7A91B0087D0008B6DAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

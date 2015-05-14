@@ -1,0 +1,6 @@
+framework module Alamofire {
+  umbrella header "Pods-wheel-app-Alamofire-umbrella.h"
+
+  export *
+  module * { export * }
+}

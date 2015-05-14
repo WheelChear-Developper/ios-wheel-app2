@@ -9,6 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
+//import Alamofire_SwiftyJSON
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -27,6 +30,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var map_longitude: CLLocationDegrees!
     //初回緯度経度セットフラグ
     var map_FirstPointSet: Bool! = false
+    //ピンの情報保存用構造体
+    var pinInfo:[GpsPin_DataModal.Info] = []
+    
+    struct Info {
+        var id: Double       // ID
+        var lat: Double      // 緯度
+        var lon: Double      // 経度
+        var title: String    // 名前
+        var subTitle: String //サブ名前
+        var pinType: String  //ピンの種類
+    }
     
     
     //ナビゲーション画面に遷移
@@ -87,7 +101,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // 位置情報の更新を開始.
         myLocationManager.startUpdatingLocation()
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +124,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // 位置情報取得間隔を指定．指定した値（メートル）移動したら位置情報を更新する
         myLocationManager.distanceFilter = 0.1//10.0
         
-    
+        
         
         // セキュリティ認証のステータスを取得.
         let status = CLLocationManager.authorizationStatus()
@@ -192,9 +206,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             InfoLabel2.text = "ナビゲーション表示"
             
             if (self.map_FirstPointSet == false) {
-
                 
-
+                
+                
                 
                 //ズーム
                 var theRegion: MKCoordinateRegion = self.MapView.region
@@ -202,7 +216,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 theRegion.span.latitudeDelta = 0.01
                 self.MapView.setRegion(theRegion, animated:true)
                 self.MapView.showsUserLocation = true
-
+                
                 //初期フラグ設定解除
                 self.map_FirstPointSet = true
             }
@@ -240,45 +254,75 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         var para:NSDictionary = ["data": apiString];
         
+        //ピンの情報構造体の初期化
+        var pinInfo:[GpsPin_DataModal.Info] = []
         
         //リクエスト
+
+        
+/*
         let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         let serializer:AFJSONRequestSerializer = AFJSONRequestSerializer()
         manager.requestSerializer = serializer
         manager.GET("http://overpass-api.de/api/interpreter", parameters: para,
-            success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
-                println("Success!!")
-                println(responsobject)
+            success: { (operation, json) -> Void in
+                let array = json as! NSDictionary
+                //絞り込み
+                let el_array: AnyObject? = array["elements"]
                 
+                //ピンの情報構造体の初期化
+                var pinInfo:[GpsPin_DataModal.Info] = []
+                
+                // セット済みのピンを削除
+                self.MapView.removeAnnotations(self.MapView.annotations)
+                
+                for(var i = 0;i < 5;i++){//el_array?.count;i++){
+                    println("ピンの回数  : \(i)")
+                    
+                    var gps_pin_id: Double? = ((el_array as? NSArray)?[i] as? NSDictionary)?["id"]?.doubleValue
+                    var gps_pin_lat: Double? = ((el_array as? NSArray)?[i] as? NSDictionary)?["lat"]?.doubleValue
+                    var gps_pin_lon: Double? = ((el_array as? NSArray)?[i] as? NSDictionary)?["lon"]?.doubleValue
+                    
+                    println("id  : \(gps_pin_id)")
+                    println("lat : \(gps_pin_lat)")
+                    println("lon : \(gps_pin_lon)")
+                    
+                    let gps_pin_tag_name: String? = (((el_array as? NSArray)?[i] as? NSDictionary)?["tags"] as? NSDictionary)?["name"]?.stringValue
+                    //                    let gps_pin_tag_name:NSString =
+                    println("name : \(gps_pin_tag_name)")
+                    
+                    let gps_pin_tag_highway: AnyObject? = (((el_array as? NSArray)?[i] as? NSDictionary)?["tags"] as? NSDictionary)?["highway"]
+                    println("highway : \(gps_pin_tag_highway)")
+                    
+                    
+                    if((gps_pin_lat != nil) || (gps_pin_lon != nil)){
+                        
+                        var myPin: MKPointAnnotation = MKPointAnnotation()
+                        
+                        // 座標を設定
+                        myPin.coordinate = CLLocationCoordinate2DMake(gps_pin_lat!, gps_pin_lon!);
+                        
+                        // タイトルを設定
+                        //                        myPin.title = gps_pin_tag_name
+                        
+                        // サブタイトルを設定
+                        myPin.subtitle = "aaa"
+                        
+                        pinInfo.append(GpsPin_DataModal.Info(id: gps_pin_id!, lat: gps_pin_lat!, lon: gps_pin_lon!, title: gps_pin_tag_name! as! String, subTitle: "aaa", pinType: "bb"))
+                        
+                        
+                        self.MapView.addAnnotation(myPin)
+                    }
+                    
+                }
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error!!")
             }
         )
-        
-        
-        /*
-        
-        // セット済みのピンを削除
-        self.MapView.removeAnnotations(self.MapView.annotations)
-        
-        // ピンを生成.
-        var myPin: MKPointAnnotation = MKPointAnnotation()
-        
-        // 座標を設定.
-        myPin.coordinate = centerCoordinate
-        
-        // タイトルを設定.
-        myPin.title = "自分"
-        
-        // サブタイトルを設定.
-        myPin.subtitle = "現在の場所"
-        
-        // MapViewにピンを追加.
-        self.MapView.addAnnotation(myPin)
         */
-
+        
     }
     
     /* 位置情報取得失敗時に実行される関数 */
@@ -309,6 +353,49 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             println("etc.")
         }
     }
-
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        
+        if annotation === mapView.userLocation { // 現在地を示すアノテーションの場合はデフォルトのまま
+            let identifier = "annotation"
+            if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("annotation") { // 再利用できる場合はそのまま返す
+                return annotationView
+            } else { // 再利用できるアノテーションが無い場合（初回など）は生成する
+                let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView.image = UIImage(named: "pin_wheel") // ここで好きな画像を設定します
+                return annotationView
+            }
+        } else {
+            let identifier = "annotation"
+            if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("annotation") { // 再利用できる場合はそのまま返す
+                return annotationView
+            } else { // 再利用できるアノテーションが無い場合（初回など）は生成する
+                let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView.image = UIImage(named: "pin_green") // ここで好きな画像を設定します
+                
+                
+                
+                switch (pinInfo[0].pinType) {
+                case "bb":
+                    annotationView.image = UIImage(named: "pin_red") // ここで好きな画像を設定します
+                default:
+                    break
+                }
+                
+                return annotationView
+            }
+        }
+    }
+    
+    struct Order {
+        var model: String  // 型名
+        var price: Int  // 単価
+        var quantity: Int  // 個数
+        func payment() -> Int {  // 支払額(read only)
+            return price * quantity
+        }
+    }
+    
 }
 
