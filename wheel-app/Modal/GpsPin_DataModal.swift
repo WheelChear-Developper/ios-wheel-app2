@@ -12,7 +12,9 @@ import UIKit
 class GpsPin_DataModal: NSObject {
     
     struct Info {
-        var id: Double       // ID
+        var sortno: Int      // 順番設定用
+        var type: String     // TYPE
+        var id: Int64        // ID
         var lat: Double      // 緯度
         var lon: Double      // 経度
         var title: String    // 名前

@@ -11,7 +11,6 @@ import MapKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
-//import Alamofire_SwiftyJSON
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -31,17 +30,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     //初回緯度経度セットフラグ
     var map_FirstPointSet: Bool! = false
     //ピンの情報保存用構造体
-    var pinInfo:[GpsPin_DataModal.Info] = []
+    var pinInfo:[Info] = []
+    var pinCount: Int = 0
     
     struct Info {
-        var id: Double       // ID
+        var sortno: Int      // 順番設定用
+        var type: String     // TYPE
+        var id: Int64        // ID
         var lat: Double      // 緯度
         var lon: Double      // 経度
+        var tagcount: Int    // タグの数
         var title: String    // 名前
         var subTitle: String //サブ名前
         var pinType: String  //ピンの種類
     }
-    
     
     //ナビゲーション画面に遷移
     @IBAction func pushButton_NaviMap(sender: AnyObject) {
@@ -234,17 +236,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         
         
+        //ピンの情報構造体の初期化
+        var pinInfo:[Info] = []
         
+        //ピンカウント初期化
+        self.pinCount = 0
         
+        // セット済みのピンを削除
+        self.MapView.removeAnnotations(self.MapView.annotations)
+        
+        //APIへのURLとパラメータ設定
+        let urlPath = "http://overpass-api.de/api/interpreter"
         var apiString:String = "[out:json];"
         apiString = apiString + "("
-        apiString = apiString + "node['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        apiString = apiString + "node['wheelchair:description'~'.'](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
         
-        apiString = apiString + "node['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        apiString = apiString + "node['amenity'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
         
-        apiString = apiString + "node['highway'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['highway'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['highway'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
-        
-        apiString = apiString + "node['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));way['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));relation['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
+        apiString = apiString + "node['building'~''](around.a:500.0,\(self.map_latitude),\(self.map_longitude));"
         
         apiString = apiString + ");"
         // print resultsc
@@ -254,75 +263,156 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         var para:NSDictionary = ["data": apiString];
         
-        //ピンの情報構造体の初期化
-        var pinInfo:[GpsPin_DataModal.Info] = []
-        
         //リクエスト
+        Alamofire.request(.GET, urlPath, parameters: ["data": apiString]).responseJSON { (request, response, responseData, error) -> Void in
+            
+            // titleを表示
+            if let data: AnyObject = responseData {
 
-        
-/*
-        let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
-        let serializer:AFJSONRequestSerializer = AFJSONRequestSerializer()
-        manager.requestSerializer = serializer
-        manager.GET("http://overpass-api.de/api/interpreter", parameters: para,
-            success: { (operation, json) -> Void in
-                let array = json as! NSDictionary
-                //絞り込み
-                let el_array: AnyObject? = array["elements"]
+                let json_data = JSON(data)
+                let count: Int? = json_data["elements"].array?.count
                 
-                //ピンの情報構造体の初期化
-                var pinInfo:[GpsPin_DataModal.Info] = []
+                println(json_data["elements"])
                 
-                // セット済みのピンを削除
-                self.MapView.removeAnnotations(self.MapView.annotations)
-                
-                for(var i = 0;i < 5;i++){//el_array?.count;i++){
-                    println("ピンの回数  : \(i)")
-                    
-                    var gps_pin_id: Double? = ((el_array as? NSArray)?[i] as? NSDictionary)?["id"]?.doubleValue
-                    var gps_pin_lat: Double? = ((el_array as? NSArray)?[i] as? NSDictionary)?["lat"]?.doubleValue
-                    var gps_pin_lon: Double? = ((el_array as? NSArray)?[i] as? NSDictionary)?["lon"]?.doubleValue
-                    
-                    println("id  : \(gps_pin_id)")
-                    println("lat : \(gps_pin_lat)")
-                    println("lon : \(gps_pin_lon)")
-                    
-                    let gps_pin_tag_name: String? = (((el_array as? NSArray)?[i] as? NSDictionary)?["tags"] as? NSDictionary)?["name"]?.stringValue
-                    //                    let gps_pin_tag_name:NSString =
-                    println("name : \(gps_pin_tag_name)")
-                    
-                    let gps_pin_tag_highway: AnyObject? = (((el_array as? NSArray)?[i] as? NSDictionary)?["tags"] as? NSDictionary)?["highway"]
-                    println("highway : \(gps_pin_tag_highway)")
-                    
-                    
-                    if((gps_pin_lat != nil) || (gps_pin_lon != nil)){
+                if let num = count {
+                    for index in 0..<num {
+                        //tag_name
+                        let get_type: String? = json_data["elements"][index]["type"].string
+                        if get_type?.isEmpty != nil {
+                            //println("type is {\(get_type)}")
+                        } else {
+                            // errorの処理
+                        }
+                        let get_id: Int64? = json_data["elements"][index]["id"].int64
+                        let get_lat: Double? = json_data["elements"][index]["lat"].double
+                        let get_lon: Double? = json_data["elements"][index]["lon"].double
+                        println("id is {\(get_id)}")
+                        println("lat is {\(get_lat)}")
+                        println("lon is {\(get_lon)}")
                         
-                        var myPin: MKPointAnnotation = MKPointAnnotation()
+                        var get_tag_name:String? = ""
+                        var get_tag_note:String? = ""
+                        var get_tag_noteja:String? = ""
+                        var get_tag_wheelchair:String? = ""
+                        var get_tag_highway:String? = ""
+                        var get_tag_amenity:String? = ""
                         
-                        // 座標を設定
-                        myPin.coordinate = CLLocationCoordinate2DMake(gps_pin_lat!, gps_pin_lon!);
+                        var get_tag_AdminArea:String? = ""
+                        var get_tag_PubFacAdmin:String? = ""
                         
-                        // タイトルを設定
-                        //                        myPin.title = gps_pin_tag_name
+                        var get_tagCount = 0
                         
-                        // サブタイトルを設定
-                        myPin.subtitle = "aaa"
+                        let get_tags_array: Dictionary? = json_data["elements"][index]["tags"].dictionary
+                        if(get_tags_array?.count > 0){
+                            
+                            //tag_name
+                            get_tag_name = json_data["elements"][index]["tags"]["name"].string
+                            if get_tag_name?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("name is {\(get_tag_name)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            //tag_note
+                            get_tag_note = json_data["elements"][index]["tags"]["note"].string
+                            if get_tag_note?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("note is {\(get_tag_note)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            //tag_noteja
+                            get_tag_noteja = json_data["elements"][index]["tags"]["note:ja"].string
+                            if get_tag_noteja?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("noteja is {\(get_tag_noteja)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            //tag_wheelchair
+                            get_tag_wheelchair = json_data["elements"][index]["tags"]["wheelchair"].string
+                            if get_tag_wheelchair?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("wheelchair is {\(get_tag_wheelchair)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            //tag_highway
+                            get_tag_highway = json_data["elements"][index]["tags"]["highway"].string
+                            if get_tag_highway?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("name is {\(get_tag_highway)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            //tag_amenity
+                            get_tag_amenity = json_data["elements"][index]["tags"]["amenity"].string
+                            if get_tag_amenity?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("name is {\(get_tag_amenity)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            
+                            //tag_AdminArea
+                            get_tag_AdminArea = json_data["elements"][index]["tags"]["KSJ2:AdminArea"].string
+                            if get_tag_AdminArea?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("name is {\(get_tag_AdminArea)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                            //tag_PubFacAdmin
+                            get_tag_PubFacAdmin = json_data["elements"][index]["tags"]["KSJ2:PubFacAdmin"].string
+                            if get_tag_PubFacAdmin?.isEmpty != nil {
+                                get_tagCount+=1
+                                println("name is {\(get_tag_PubFacAdmin)}")
+                            } else {
+                                // errorの処理
+                            }
+                            
+                        }
                         
-                        pinInfo.append(GpsPin_DataModal.Info(id: gps_pin_id!, lat: gps_pin_lat!, lon: gps_pin_lon!, title: gps_pin_tag_name! as! String, subTitle: "aaa", pinType: "bb"))
+                        if(get_lat != nil){
+                            if(get_lon != nil){
+                            
+                                var myPin: MKPointAnnotation = MKPointAnnotation()
+                            
+                                // 座標を設定
+                                myPin.coordinate = CLLocationCoordinate2DMake(get_lat!, get_lon!);
+                            
+                                // タイトルを設定
+                                myPin.title = get_tag_name
+                            
+                                // サブタイトルを設定
+                                myPin.subtitle = "aaa"
+                                
+                                //地図情報を保存
+                                self.pinInfo.append(Info(sortno:index, type:get_type!, id: get_id!, lat: get_lat!, lon: get_lon!,tagcount: get_tagCount, title: "", subTitle: "aaa", pinType: "bb"))
+                            
+                            
+                                self.MapView.addAnnotation(myPin)
                         
+                            }
+                        }
                         
-                        self.MapView.addAnnotation(myPin)
                     }
-                    
                 }
-                
-            },
-            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error!!")
             }
-        )
-        */
-        
+            
+            // Error処理
+            if let resError = error {
+                println("Connection failed.\(resError.localizedDescription)")
+                println("Failure:\(urlPath)")
+            }
+        }
     }
     
     /* 位置情報取得失敗時に実行される関数 */
@@ -372,15 +462,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 return annotationView
             } else { // 再利用できるアノテーションが無い場合（初回など）は生成する
                 let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                annotationView.image = UIImage(named: "pin_green") // ここで好きな画像を設定します
                 
-                
-                
-                switch (pinInfo[0].pinType) {
-                case "bb":
-                    annotationView.image = UIImage(named: "pin_red") // ここで好きな画像を設定します
-                default:
-                    break
+                if(self.pinInfo.count > 0){
+                    switch (self.pinInfo[self.pinCount].type) {
+                    case "node":
+                        if(self.pinInfo[self.pinCount].tagcount == 0){
+                            annotationView.image = UIImage(named: "pin_purple")
+                        }else{
+                            annotationView.image = UIImage(named: "pin_blue")
+                        }
+                    case "way":
+                        annotationView.image = UIImage(named: "pin_gray")
+                    case "relation":
+                        annotationView.image = UIImage(named: "pin_green")
+                    case "route":
+                        annotationView.image = UIImage(named: "pin_orenge")
+                    default:
+                        break
+                    }
+                    self.pinCount += 1
                 }
                 
                 return annotationView
